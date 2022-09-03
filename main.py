@@ -1,5 +1,7 @@
 import streamlit as st
 
+from openai_utils import solve_leetcode_question
+
 st.set_page_config(
     page_title="Hadi's Leetcode Solver",
     page_icon="https://www.flaticon.com/free-icon/rubber-duck_1012600#",
@@ -15,8 +17,4 @@ question: str = st.text_area(
 
 if st.button("Get Answer"):
     st.header("Python Leetcode Solution")
-    st.text("""
-    class Solution:
-        def twoSums(self, arr: List[str]) -> Tuple[int, int]:
-            return [0, 1]
-    """)
+    st.text(solve_leetcode_question(question))
